@@ -1,0 +1,47 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      IMC
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-grid>
+        <ion-row>
+            <ion-col>
+                <ion-item>
+                    <ion-label color="success">Peso:</ion-label>
+                    <ion-input type="number" [(ngModel)]="peso"></ion-input>
+                </ion-item>
+            </ion-col>
+        </ion-row>
+        <ion-row>
+            <ion-col>
+                <ion-item>
+                    <ion-label color="warning">Altura:</ion-label>
+                    <ion-input type="number" [(ngModel)]="altura"></ion-input>
+                </ion-item>
+            </ion-col>
+        </ion-row>
+        <ion-row>
+            <ion-col>
+                <ion-button color="primary" expand="block" (click)="imc()">Calcular</ion-button>
+            </ion-col>
+        </ion-row>
+        <ion-row>
+            <ion-col>
+            <h2 style="text-align: center;">Resultado: {{ form }}</h2>
+            </ion-col>
+        </ion-row>
+        <ion-row>
+            <ion-col>
+                <ion-item>
+                    <ion-icon name="heart" color="{{ cor }}"></ion-icon>
+                    {{ mensagem }}
+                    
+                </ion-item>
+            </ion-col>
+        </ion-row>
+    </ion-grid> 
+</ion-content>
