@@ -1,17 +1,53 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Tab 3
+        PESO IDEAL
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Tab 3</ion-title>
-    </ion-toolbar>
-  </ion-header>
+  
+  <ion-grid>
+      <ion-row>
+          <ion-col>
+              <ion-item>
+                  <ion-label color="warning" position="stacked">Digite sua altura: </ion-label>
+                  <ion-input type="number" [(ngModel)]="altura"></ion-input>
+              </ion-item>
+          </ion-col>
+      </ion-row>
+      <ion-row>
+          <ion-col>
+              <ion-item>
+                <ion-list>
+                        <ion-radio-group [(ngModel)]="sexo"> 
 
-  <app-explore-container name="Tab 3 page"></app-explore-container>
+                            <ion-item>
+                            <ion-label>Masculino</ion-label>
+                            <ion-radio slot="start" value="m"></ion-radio>
+                            </ion-item>
+
+                            <ion-item>
+                            <ion-label>Feminino</ion-label>
+                            <ion-radio slot="start" value="f"></ion-radio>
+                            </ion-item>
+                        </ion-radio-group>
+                  </ion-list>
+              </ion-item>
+          </ion-col>
+      </ion-row>
+      <ion-row>
+            <ion-col>
+                <ion-button color="primary" expand="block" (click)="pesoIdeal()">Calcular</ion-button>
+            </ion-col>
+        </ion-row>
+        <ion-row>
+            <ion-col>
+            <h2 style="text-align: center;">Resultado: </h2>
+            <h1 style="text-align: center;" color="success">{{ resultado }} </h1>
+            </ion-col>
+        </ion-row>
+  </ion-grid>    
+    
 </ion-content>
